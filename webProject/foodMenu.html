@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div">
+      <label for="">Select type</label>
+      <select name="" id="select" onchange="showDetails()">
+        <option value="">Select...</option>
+      </select>
+      <label for="">Select item</label>
+    </div>
+    <script>
+      let menu = {
+        drinks: ["Water", "Tea", "Sweet Tea", "Coke", "Dr. Pepper", "Sprite"],
+        entrees: [
+          "Hamburger w/ Fries",
+          "Grilled Cheese w/ Tater Tots",
+          "Grilled Chicken w/ Veggies",
+          "Chicken Fried Steak w/ Mashed Potatoes",
+          "Fried Shrimp w/ Coleslaw",
+          "Veggie Plate",
+        ],
+        desserts: ["Cheesecake", "Chocolate Cake", "Snickerdoodle Cookie"],
+      };
+
+      let divContainer = document.querySelector("#div");
+      let select = document.querySelector("#select");
+      for (item in menu) {
+        let option = document.createElement("option");
+        option = new Option(item, item);
+        select.append(option);
+      }
+
+      let select2 = document.createElement("select");
+      let option2 = document.createElement("option");
+      option2 = new Option("Select...", "select-two");
+      divContainer.append(select2);
+
+      function showDetails() {
+        select2.innerHTML = ""; //clears dropdown options.
+        for (item in menu) {
+          if (select.value == item) {
+            console.log(item);
+            for (detailedItem of menu[item]) {
+              console.log(detailedItem);
+              let option = document.createElement("option");
+              option = new Option(detailedItem, menu[item].indexOf(detailedItem));
+              select2.append(option);
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

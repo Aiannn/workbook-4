@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select name="" id="select">
+      <option value="0">Select...</option>
+      <!-- <option value="1">New York</option>
+      <option value="2">New Jersey</option>
+      <option value="3">Ohio</option> -->
+    </select>
+
+    <script>
+      const englandFootballTeams = [
+        {
+          name: "Manchester United",
+          numberOfTrophies: 66,
+          participateInUCL: true,
+          currentCaptain: "Bruno Fernandes",
+          mostValuablePlayer: "Bruno Fernandes",
+        },
+        {
+          name: "Manchester City",
+          numberOfTrophies: 38,
+          participateInUCL: true,
+          currentCaptain: "Kevin De Bruyne",
+          mostValuablePlayer: "Erling Haaland",
+        },
+        {
+          name: "Liverpool",
+          numberOfTrophies: 68,
+          participateInUCL: false,
+          currentCaptain: "Virgil van Dijk",
+          mostValuablePlayer: "Mohamed Salah",
+        },
+        {
+          name: "Chelsea",
+          numberOfTrophies: 32,
+          participateInUCL: false,
+          currentCaptain: "Reece James",
+          mostValuablePlayer: "Enzo Fernández",
+        },
+        {
+          name: "Arsenal",
+          numberOfTrophies: 48,
+          participateInUCL: true,
+          currentCaptain: "Martin Ødegaard",
+          mostValuablePlayer: "Bukayo Saka",
+        },
+        {
+          name: "Tottenham Hotspur",
+          numberOfTrophies: 26,
+          participateInUCL: false,
+          currentCaptain: "Son Heung-min",
+          mostValuablePlayer: "Harry Kane", // Note: Transfermarkt still values Kane highly despite transfer to Bayern
+        },
+        {
+          name: "Newcastle United",
+          numberOfTrophies: 11,
+          participateInUCL: true,
+          currentCaptain: "Jamaal Lascelles",
+          mostValuablePlayer: "Bruno Guimarães",
+        },
+        {
+          name: "Aston Villa",
+          numberOfTrophies: 25,
+          participateInUCL: false,
+          currentCaptain: "John McGinn",
+          mostValuablePlayer: "Ollie Watkins",
+        },
+        {
+          name: "West Ham United",
+          numberOfTrophies: 11,
+          participateInUCL: false,
+          currentCaptain: "Lucas Paquetá",
+          mostValuablePlayer: "Lucas Paquetá",
+        },
+        {
+          name: "Brighton & Hove Albion",
+          numberOfTrophies: 1,
+          participateInUCL: false,
+          currentCaptain: "Lewis Dunk",
+          mostValuablePlayer: "Kaoru Mitoma",
+        },
+      ];
+
+      let select = document.querySelector("#select");
+      for (let team of englandFootballTeams) {
+        let option = document.createElement("option");
+        option.value = `${englandFootballTeams.indexOf(team)}`;
+        option.innerText = `${team.name}`;
+        select.append(option);
+      }
+
+      // let select = document.querySelector("#select");
+      // let option1 = document.createElement("option");
+      // option1.value = "1";
+      // option1.innerText = "New York";
+      // select.append(option1);
+
+      // let option2 = document.createElement("option");
+      // option2.value = "2";
+      // option2.innerText = "New Jersey";
+      // select.append(option2);
+
+      // let option3 = document.createElement("option");
+      // option3.value = "3";
+      // option3.innerText = "Ohio";
+      // select.append(option3);
+    </script>
+  </body>
+</html>
